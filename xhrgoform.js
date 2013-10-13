@@ -1,16 +1,16 @@
 // Filename: xhrgoform.js  
-// Timestamp: 2013.10.12-20:58:27 (last modified)  
+// Timestamp: 2013.10.12-21:31:20 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com), Chihung Yu  
 // Requires: xhrgo.js, formurlencoded.js
 
 var xhrgo = require('xhrgo'),
     formurlencoded = require('form-urlencoded');
 
-var xhrgoform = ((typeof module === 'object') ? module : {}).exports = (function (xhrgo) {
+var xhrgoform = ((typeof module === 'object') ? module : {}).exports = (function (xhrgoform) {
 
-  var xdrgoform = Object.create(xhrgo);
+  xhrgoform = Object.create(xhrgo);
 
-  xdrgoform.formEncoded = function (type, path, data, token, fn, resWaitTime) {
+  xhrgoform.formEncoded = function (type, path, data, token, fn, resWaitTime) {
     var xhr = xhrgo.newRequest(), finData,
         timeout = resWaitTime || 30000, 
         timer,
@@ -48,7 +48,6 @@ var xhrgoform = ((typeof module === 'object') ? module : {}).exports = (function
     }, timeout);
   };
 
-
-  return xdrgoform;
+  return xhrgoform;
 
 }());
