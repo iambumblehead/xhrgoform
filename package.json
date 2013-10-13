@@ -1,6 +1,6 @@
 {
   "name": "xhrgoform",
-  "version": "0.0.01",
+  "version": "0.0.02",
   "repository": {
     "type": "git",
     "url": "https://github.com/iambumblehead/xhrgoform.git"
@@ -18,7 +18,8 @@
   ],
   "dependencies": {
      "form-urlencoded" : ">=0.0.0",
-     "parseUri" : ">=0.0.0"
+     "parseUri" : ">=0.0.0",
+     "xhrgo" : ">=0.0.0"
   },
   "devDependencies": {
     "compareobj": ">=0.0.3",
