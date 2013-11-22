@@ -1,6 +1,6 @@
 // Filename: xhrgoform.js  
-// Timestamp: 2013.10.12-21:31:20 (last modified)  
-// Author(s): Bumblehead (www.bumblehead.com), Chihung Yu  
+// Timestamp: 2013.11.22-02:01:43 (last modified)  
+// Author(s): Bumblehead (www.bumblehead.com)
 // Requires: xhrgo.js, formurlencoded.js
 
 var xhrgo = require('xhrgo'),
