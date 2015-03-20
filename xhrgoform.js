@@ -1,9 +1,10 @@
 // Filename: xhrgoform.js  
-// Timestamp: 2013.11.22-02:01:43 (last modified)  
+// Timestamp: 2015.03.20-15:28:50 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)
-// Requires: xhrgo.js, formurlencoded.js
+// Requires: xhrgo.js, formurlencoded.js, optfn.js
 
 var xhrgo = require('xhrgo'),
+    optfn = require('optfn'),
     formurlencoded = require('form-urlencoded');
 
 var xhrgoform = ((typeof module === 'object') ? module : {}).exports = (function (xhrgoform) {
@@ -13,8 +14,13 @@ var xhrgoform = ((typeof module === 'object') ? module : {}).exports = (function
   xhrgoform.formEncoded = function (type, path, data, token, fn, resWaitTime) {
     var xhr = xhrgo.newRequest(), finData,
         timeout = resWaitTime || 30000, 
-        timer,
-        doneFn = function (err, res) { if (typeof fn === 'function') fn(err, res); };
+        timer;
+        
+    fn = optfn(fn);
+
+    if (type.match(/GET|DELETE/)) {
+      path += '?' + formurlencoded.encode(data);
+    }
 
     xhr.open(type, path, true);
 
@@ -38,13 +44,13 @@ var xhrgoform = ((typeof module === 'object') ? module : {}).exports = (function
         }
       }
 
-      doneFn((xhr.status === 200) ? null : xhr, res);
+      fn(xhr.status === 200 ? null : xhr, res);
     });
 
     xhr.send(finData);      
 
     timer = setTimeout(function () {
-      xhr.abort(); doneFn(xhr);
+      xhr.abort(); fn(xhr);
     }, timeout);
   };
 
