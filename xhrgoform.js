@@ -1,5 +1,5 @@
 // Filename: xhrgoform.js  
-// Timestamp: 2015.03.20-15:28:50 (last modified)  
+// Timestamp: 2015.03.20-16:26:09 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)
 // Requires: xhrgo.js, formurlencoded.js, optfn.js
 
@@ -18,7 +18,7 @@ var xhrgoform = ((typeof module === 'object') ? module : {}).exports = (function
         
     fn = optfn(fn);
 
-    if (type.match(/GET|DELETE/)) {
+    if (type.match(/GET|DELETE/) && data) {
       path += '?' + formurlencoded.encode(data);
     }
 
