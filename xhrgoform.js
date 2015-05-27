@@ -1,5 +1,5 @@
 // Filename: xhrgoform.js  
-// Timestamp: 2015.03.20-16:26:09 (last modified)  
+// Timestamp: 2015.05.27-13:59:39 (last modified)  
 // Author(s): Bumblehead (www.bumblehead.com)
 // Requires: xhrgo.js, formurlencoded.js, optfn.js
 
@@ -36,6 +36,8 @@ var xhrgoform = ((typeof module === 'object') ? module : {}).exports = (function
 
     xhr.onreadystatechange = xhrgo.constructReadyState(xhr, function (xhr) {
       var res = 'success';
+
+      clearTimeout(timer);
       if (xhr.responseText) {
         try {
           res = JSON.parse(xhr.responseText);
@@ -50,6 +52,7 @@ var xhrgoform = ((typeof module === 'object') ? module : {}).exports = (function
     xhr.send(finData);      
 
     timer = setTimeout(function () {
+      // should .... 
       xhr.abort(); fn(xhr);
     }, timeout);
   };
