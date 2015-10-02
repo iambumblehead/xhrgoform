@@ -6,11 +6,11 @@ xhrgoform
 
 Simple/dumb `xhr` object for sending POST/PUT requests with x-www-form-urlencoded data. It uses [xhrgo][5] to manage PUT and POST requests using non-chunked [form-urlencoded][3] data formats. It assumes there is one 'success' response, `200`.
 
-xhrgoform uses the node.js callback convention. it inherits [xhrgo][6] fully and is used in the same way. One additional method is defined here called formEncoded, which uses [form-urlencoded][2].
+xhrgoform inherits [xhrgo][6] fully and is used in the same way. An additional method is defined called formEncoded, which uses [form-urlencoded][2].
 
  * **xhrgoform.formEncoded( _type_, _url_, _data_, _token_, _fn_, _time_ )**
  
-   The first two parameters are required. Data is sent and received in the `x-www-form-urlencoded` format. Data is passed to and returned from the method in the form of an object.
+   Data is sent and received in `x-www-form-urlencoded` format but is passed to and returned from the method in the form of an object
  
    ```javascript
    xhrgoform.formEncoded('POST', '/hi', {hi:'b'}, null, function (err, res) {
