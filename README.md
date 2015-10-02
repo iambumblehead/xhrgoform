@@ -2,11 +2,9 @@ xhrgoform
 =========
 **(c)[Bumblehead][0], 2013-2015** [MIT-license](#license)
 
-Sends POST/PUT requests with x-www-form-urlencoded data, using [xhrgo][5] and [form-urlencoded][3]. It inherits [xhrgo][6] fully but includes the additional method "formEncoded".
+Sends POST and PUT requests in `x-www-form-urlencoded` format using [xhrgo][5] and [form-urlencoded][3]. It inherits [xhrgo][6] fully and includes an additional method "formEncoded".
 
  * **xhrgoform.formEncoded( _type_, _url_, _data_, _token_, _fn_, _expirems_ )**
- 
-   Sends data in `x-www-form-urlencoded` format
  
    ```javascript
    xhrgoform.formEncoded('POST', '/hi', {hi:'b'}, null, function (err, res) {
