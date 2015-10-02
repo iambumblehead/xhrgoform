@@ -6,33 +6,7 @@ xhrgoform
 
 Simple/dumb `xhr` object for sending POST/PUT requests with x-www-form-urlencoded data. It uses [xhrgo][5] to manage PUT and POST requests using non-chunked [form-urlencoded][3] data formats. It assumes there is one 'success' response, `200`.
 
-xhrgoform uses the node.js callback convention.
-
-[0]: http://www.bumblehead.com                            "bumblehead"
-[5]: https://github.com/iambumblehead/xhrgo
-[6]: https://github.com/iambumblehead/xhrgo#usage
-[3]: https://npmjs.org/package/form-urlencoded    "www-urlformencoded"
-
-------------------------------------------------------------------------------
-#### <a id="install"></a>install
-
-xhrgoform may be downloaded directly or installed through `npm`.
-
-```bash
-$ npm install xhrgo
-```
-
-to run tests, use `npm test` from a shell.
-
-```bash
-$ npm test
-```
-
-
----------------------------------------------------------
-#### <a id="usage"></a>usage
-
-xhrgoform inherits [xhrgo][6] fully and is used in the same way. One additional method is defined here called formEncoded, which uses [form-urlencoded][2].
+xhrgoform uses the node.js callback convention. it inherits [xhrgo][6] fully and is used in the same way. One additional method is defined here called formEncoded, which uses [form-urlencoded][2].
 
  * **xhrgoform.formEncoded( _type_, _url_, _data_, _token_, _fn_, _time_ )**
  
@@ -45,8 +19,11 @@ xhrgoform inherits [xhrgo][6] fully and is used in the same way. One additional 
    }, 1000);
    ```
 
-
 [2]: http://github.com/iambumblehead/url-formencoded     "formencoded"
+[0]: http://www.bumblehead.com                            "bumblehead"
+[5]: https://github.com/iambumblehead/xhrgo
+[6]: https://github.com/iambumblehead/xhrgo#usage
+[3]: https://npmjs.org/package/form-urlencoded    "www-urlformencoded"
 
 ------------------------------------------------------------------------------
 #### <a id="license">license
