@@ -6,7 +6,7 @@ Sends POST/PUT requests with x-www-form-urlencoded data, using [xhrgo][5] and [f
 
  * **xhrgoform.formEncoded( _type_, _url_, _data_, _token_, _fn_, _expirems_ )**
  
-   Data is sent and received in `x-www-form-urlencoded` format but is passed to and returned from the method in the form of an object
+   Sends data in `x-www-form-urlencoded` format
  
    ```javascript
    xhrgoform.formEncoded('POST', '/hi', {hi:'b'}, null, function (err, res) {
