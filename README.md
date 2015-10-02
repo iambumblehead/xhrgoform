@@ -2,13 +2,9 @@ xhrgoform
 =========
 **(c)[Bumblehead][0], 2013-2015** [MIT-license](#license)
 
-### overview
+Sends POST/PUT requests with x-www-form-urlencoded data, using [xhrgo][5] and [form-urlencoded][3]. It inherits [xhrgo][6] fully but includes the additional method "formEncoded".
 
-Simple/dumb `xhr` object for sending POST/PUT requests with x-www-form-urlencoded data. It uses [xhrgo][5] to manage PUT and POST requests using non-chunked [form-urlencoded][3] data formats. It assumes there is one 'success' response, `200`.
-
-xhrgoform inherits [xhrgo][6] fully and is used in the same way. An additional method is defined called formEncoded, which uses [form-urlencoded][2].
-
- * **xhrgoform.formEncoded( _type_, _url_, _data_, _token_, _fn_, _time_ )**
+ * **xhrgoform.formEncoded( _type_, _url_, _data_, _token_, _fn_, _expirems_ )**
  
    Data is sent and received in `x-www-form-urlencoded` format but is passed to and returned from the method in the form of an object
  
