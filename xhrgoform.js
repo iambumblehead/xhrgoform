@@ -7,7 +7,7 @@ var xhrgo = require('xhrgo'),
     optfn = require('optfn'),
     formurlencoded = require('form-urlencoded');
 
-var xhrgoform = ((typeof module === 'object') ? module : {}).exports = (function (xhrgoform) {
+var xhrgoform = module.exports = (function (xhrgoform) {
 
   xhrgoform = Object.create(xhrgo);
 
