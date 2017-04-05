@@ -1,7 +1,7 @@
 {
   "name": "xhrgoform",
   "main": "xhrgoform",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "form-urlencoded" : "^1.5.0",
-    "xhrgo" : "^1.1.2",
+    "xhrgo" : "^0.1.2",
     "optfn" : "0.0.x"
   },
   "devDependencies": {
