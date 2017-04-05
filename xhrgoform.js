@@ -1,5 +1,5 @@
 // Filename: xhrgoform.js  
-// Timestamp: 2015.05.27-13:59:39 (last modified)  
+// Timestamp: 2017.04.05-11:00:10 (last modified)
 // Author(s): Bumblehead (www.bumblehead.com)
 // Requires: xhrgo.js, formurlencoded.js, optfn.js
 
@@ -7,11 +7,11 @@ var xhrgo = require('xhrgo'),
     optfn = require('optfn'),
     formurlencoded = require('form-urlencoded');
 
-var xhrgoform = module.exports = (function (xhrgoform) {
+var xhrgoform = module.exports = (xhrgoform => {
 
   xhrgoform = Object.create(xhrgo);
 
-  xhrgoform.formEncoded = function (type, path, data, token, fn, resWaitTime) {
+  xhrgoform.formEncoded = (type, path, data, token, fn, resWaitTime) => {
     var xhr = xhrgo.newRequest(), finData,
         timeout = resWaitTime || 30000, 
         timer;
@@ -19,7 +19,7 @@ var xhrgoform = module.exports = (function (xhrgoform) {
     fn = optfn(fn);
 
     if (type.match(/GET|DELETE/) && data) {
-      path += '?' + formurlencoded.encode(data);
+      path += '?' + formurlencoded(data);
     }
 
     xhr.open(type, path, true);
@@ -29,12 +29,12 @@ var xhrgoform = module.exports = (function (xhrgoform) {
     }
 
     if (type.match(/PUT|POST/)) {
-      finData = formurlencoded.encode(data);
+      finData = formurlencoded(data);
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.setRequestHeader("Accept", "application/json, text/javascript");
     }
 
-    xhr.onreadystatechange = xhrgo.constructReadyState(xhr, function (xhr) {
+    xhr.onreadystatechange = xhrgo.constructReadyState(xhr, (xhr) => {
       var res = 'success';
 
       clearTimeout(timer);
@@ -51,12 +51,11 @@ var xhrgoform = module.exports = (function (xhrgoform) {
 
     xhr.send(finData);      
 
-    timer = setTimeout(function () {
-      // should .... 
+    timer = setTimeout(() => {
       xhr.abort(); fn(xhr);
     }, timeout);
   };
 
   return xhrgoform;
 
-}());
+})({});
